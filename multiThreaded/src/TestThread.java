@@ -1,116 +1,41 @@
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
-/**
- * @author 86171
- */
-
-class myThread implements Runnable{
-    Thread t;
-    private String name;
-
-    public myThread(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public void run() {
-
-        System.out.println(name +"开炮！！！！");
-
-
-
-    }
-
-    public void start(){
-        System.out.println("Creating"+name);
-        if (t==null){
-            this.t = new Thread(this);
-            t.start();
-        }
-    }
-}
-class RunnableDemo extends Thread {
-    private Thread t;
-    private String threadName;
-
-    private static  int tickets = 100;
-    private static  int sum =0;
-    private Lock ticketsLock = new ReentrantLock();
-
-    RunnableDemo(String name) {
-        threadName = name;
-        System.out.println("Creating " + threadName);
-    }
-
-    @Override
-    public  void  run() {
-
-        System.out.println("Running " + threadName);
-                while (tickets > 0) {
-                    ticketsLock.lock();
-                    try {
-                        tickets--;
-                        System.out.println(sum);
-                        System.out.println("Thread: " + threadName + ",抢了第 "+(100-tickets) +"张票,"+"剩余：" + tickets + "张票");
-                        // 模拟网络延迟
-                        int delay =(int) (Math.random()*10);
-                        Thread.sleep(delay);
-                    } catch (Exception e) {
-                        System.out.println("Thread " + threadName + " interrupted.");
-                    }
-                    finally {
-                        ticketsLock.unlock();
-                    }
-                }
-
-
-        System.out.println("Thread " + threadName + " exiting.");
-    }
-
-
-    @Override
-    public void start() {
-        System.out.println("Starting " + threadName);
-        if (t == null) {
-            t = new Thread(this, threadName);
-            t.start();
-        }
-    }
-}
 
 public class TestThread {
+    public static void main(String[] args) {
+        ThreadDemo t1 = new ThreadDemo("t1");
+        ThreadDemo t2 = new ThreadDemo("t2");
+        ThreadDemo t3 = new ThreadDemo("t3");
 
-    public static void main(String args[]) {
-        RunnableDemo R1 = new RunnableDemo("Thread-1");
-        R1.start();
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
 
-        RunnableDemo R2 = new RunnableDemo("Thread-2");
-        R2.start();
+class ThreadDemo extends Thread{
+    public String name;
+    /**
+     * 可出售票数
+     * 这里没有用static修饰，tickets属于每个线程的内部变量。
+     * 具体就是每个线程都会卖5张票。使用static修饰则会使它成为共享资源。
+     */
+    public  int tickets =5;
+    public static int sum =0;
+    @Override
+    public void run(){
 
-        RunnableDemo R3 = new RunnableDemo("Thread-3");
-        R3.start();
+        while (tickets>0){
+            decreseTicket();
+//            sum++;
+//            System.out.println(sum);
+            System.out.println(name+"出售了第"+(5-tickets)+"张票");
+        }
+    }
 
-        RunnableDemo R4 = new RunnableDemo("Thread-4");
-        R4.start();
+    public synchronized void decreseTicket(){
+        tickets--;
+    }
 
-        RunnableDemo R5 = new RunnableDemo("Thread-5");
-        R5.start();
-
-        RunnableDemo R6 = new RunnableDemo("Thread-6");
-        R6.start();
-
-        RunnableDemo R7 = new RunnableDemo("Thread-7");
-        R7.start();
-
-        RunnableDemo R8 = new RunnableDemo("Thread-8");
-        R8.start();
-        myThread myThread1 = new myThread("线程一号");
-        myThread1.start();
-        myThread myThread2 = new myThread("线程二号");
-        myThread2.start();
-
+    public ThreadDemo(String name){
+        this.name= name;
     }
 }

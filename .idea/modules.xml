@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Serialization/Serialization.iml" filepath="$PROJECT_DIR$/Serialization/Serialization.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-demo.iml" filepath="$PROJECT_DIR$/java-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multiThreaded/multiThreaded.iml" filepath="$PROJECT_DIR$/multiThreaded/multiThreaded.iml" />
     </modules>
   </component>
 </project>
