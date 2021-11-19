@@ -1,5 +1,6 @@
 /**
  * @author 86171
+ * 通过实现Runnable接口实现线程
  */
 public class TestRunnable {
     public static void main(String[] args) {
