@@ -1,4 +1,9 @@
-
+/**
+ * 通过继承 Thread 类实现线程
+ *
+ * @author guoheng
+ * @date 2021/11/19
+ */
 public class TestThread {
     public static void main(String[] args) {
         ThreadDemo t1 = new ThreadDemo("t1");
