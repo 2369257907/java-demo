@@ -11,17 +11,20 @@ public class TestRunnable {
         r2.start();
     }
 }
-class RunnableDemo implements Runnable{
-    private int tickets=5;
+
+class RunnableDemo implements Runnable {
+    private int tickets = 5;
     private String name;
+
     @Override
     public void run() {
-        while (tickets>0){
+        while (tickets > 0) {
             tickets--;
-            System.out.println(name+":售出了第"+(5-tickets)+"张票");
+            System.out.println(name + ":售出了第" + (5 - tickets) + "张票");
         }
     }
-    public RunnableDemo(String name){
-        this.name=name;
+
+    public RunnableDemo(String name) {
+        this.name = name;
     }
 }
