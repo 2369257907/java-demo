@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Serialization/Serialization.iml" filepath="$PROJECT_DIR$/Serialization/Serialization.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-demo.iml" filepath="$PROJECT_DIR$/java-demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/multiThreaded/multiThreaded.iml" filepath="$PROJECT_DIR$/multiThreaded/multiThreaded.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-io/java-io.iml" filepath="$PROJECT_DIR$/java-io/java-io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-multiThreaded/java-multiThreaded.iml" filepath="$PROJECT_DIR$/java-multiThreaded/java-multiThreaded.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-serialization/java-serialization.iml" filepath="$PROJECT_DIR$/java-serialization/java-serialization.iml" />
     </modules>
   </component>
 </project>
