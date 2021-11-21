@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/java-cookie/java-cookie.iml" filepath="$PROJECT_DIR$/java-cookie/java-cookie.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-demo.iml" filepath="$PROJECT_DIR$/java-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-io/java-io.iml" filepath="$PROJECT_DIR$/java-io/java-io.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-multiThreaded/java-multiThreaded.iml" filepath="$PROJECT_DIR$/java-multiThreaded/java-multiThreaded.iml" />
